@@ -1,10 +1,10 @@
-# Obesity Classifier Using CURE Algorithm
+# Obesity Classification Using CURE Algorithm
 
-The "Obesity Classifier using CURE Algorithm" project aims to analyze a dataset containing BMI (Body Mass Index) and age information to classify individuals into different weight categories (e.g., underweight, normal weight, overweight, obese) using the CURE (Clustering Using Representatives) algorithm. Additionally, this project demonstrates how CURE outperforms K-means clustering for this problem statement.
+The "CURE Obesity Classifier" project aims to analyze a dataset containing BMI (Body Mass Index) and Age information to classify individuals into different weight categories (e.g., underweight, normal weight, obese) using the CURE (Clustering Using Representatives) Algorithm. Additionally, this project demonstrates how CURE outperforms K-means clustering for this problem statement.
 
 # Applicability of CURE Algorithm
 
-The CURE algorithm is particularly applicable in this project due to its ability to handle clusters of arbitrary shape and size. Since BMI and age data may not necessarily form spherical clusters, CURE's flexibility in representing clusters using a small set of representative points makes it suitable for this analysis. Additionally, CURE is robust to outliers, which may be present in real-world BMI and age datasets.
+The CURE algorithm is particularly applicable in this project due to its ability to handle clusters of arbitrary shape and size. Since BMI and Age data may not necessarily form spherical clusters, CURE's flexibility in representing clusters using a small set of representative points makes it suitable for this analysis. Additionally, CURE is robust to outliers, which may be present in real-world BMI and Age datasets.
 
 # CODE EXPLAINATION
 
@@ -254,11 +254,11 @@ plt.show()
 1. Clone the repo
 
 ```
-   git clone https://github.com/AnonO6/ObesityClassifierUsingCUREAlgorithm.git
-   cd ObesityClassifierUsingCUREAlgorithm
+   git clone https://github.com/Keshav-shar/CUREObesityClassifier.git
+   cd CUREObesityClassifier
 ```
 
-2. Install pandas, matplotlib and (scikit-learn for k-means clustring in compare_clusters.py)
+2. Install pandas, matplotlib and (scikit-learn for k-means clustring in K-Means_and_CURE_comparison.py)
 
 ```
    pip install pandas
@@ -266,24 +266,26 @@ plt.show()
    pip install scikit-learn
 ```
 
-3. Ensure you have complete_data.csv file containing your complete data. Run the script to generate sample_data.csv:
+3. Ensure you have complete_age_bmi_data.csv file containing your complete data. Run the script to generate sample_age_bmi_data.csv:
 
 ```
-   python generate_sample_data.py
+   python sample_data_generation.py
 ```
 
-4. Open the cure_algorithm_with_plots.py script and update the parameters as needed (e.g., number of clusters, sample size). Run the script below, replace sample_data.csv, complete_data.csv, and output.csv with your actual file names.
-   Adjust the parameters (3, 5, 0.2) according to your requirements.
+4. Open the cure_algorithm_with_plots.py script and update the parameters as needed. Run the script below, replace sample_age_bmi_data.csv, complete_age_bmi_data.csv, and output.csv with your provided file names,in case of modification.
+   Adjust the parameters (3, 10, 0.5), (representing number of clusters,Representatives in each cluster and shifting offset) according to your requirements.
 
 ```
-   python clustering_cure.py sample_data.csv complete_data.csv 3 5 0.2 output.csv
+   python CURE_cluster_generation.py sample_age_bmi_data.csv complete_age_bmi_data.csv 3 10 0.5 output.csv
 ```
 
-5. To run compare_clusters.py to compare the result of k-means vs CURE run the following script. Make sure to replace sample_data.csv, complete_data.csv, and output.csv with your actual file names. Adjust the parameters (3, 5, 0.2) according to your requirements.
+5. After running the script, two plots will be displayed: one showing the initial clusters and the other showing the final clusters.
+
+6. To run K-Means_and_CURE_comparison.py to compare the result of K-Means vs CURE run the following script. Make sure to replace sample_age_bmi_data.csv, complete_age_bmi_data.csv, and output.csv with your actual file names. Adjust the parameters (3, 10, 0.5) according to your requirements.
 
 ```
-python compare_clusters.py sample_data.csv complete_data.csv 3 5 0.2 output_cure.csv
+python K-Means_and_CURE_comparison.py sample_age_bmi_data.csv complete_age_bmi_data.csv 3 10 0.5 output_cure.csv
 
 ```
+7. After running this script, two plots will be displayed: one showing the K-means Clusters and the other showing the Final CURE clusters for complete_age_bmi_data.csv.
 
-6. After running the script, two plots will be displayed: one showing the initial clusters and the other showing the final clusters.
