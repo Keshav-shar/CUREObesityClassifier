@@ -113,6 +113,7 @@ def formClusters_heirarchical(sampleData):
                     min = clusterDistance(clusters[i], clusters[j])
                     c1 = i
                     c2 = j
+
         clusters[c1].extend(clusters[c2])
         del clusters[c2]
     return clusters
