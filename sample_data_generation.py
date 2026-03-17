@@ -1,3 +1,4 @@
+import random
 import pandas as pd
 #Creates sample data csv file by taking random points(equivalent to sample size) from complete data file
 def create_sample_data(complete_data_file, sample_data_file, sample_size):
